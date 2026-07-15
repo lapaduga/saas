@@ -14,7 +14,7 @@ const config = {
   dbPath: resolve(root, process.env.DB_PATH || './data/support.db'),
   llmProvider: process.env.LLM_PROVIDER || 'deepseek',
   llm: {
-    model: process.env.CHAT_MODEL || 'deepseek-chat',
+    model: process.env.CHAT_MODEL || 'deepseek-v4-pro',
     baseUrl: process.env.CHAT_BASE_URL || 'https://api.deepseek.com',
     apiKey: process.env.CHAT_API_KEY || '',
     temperature: 0.3,
