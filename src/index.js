@@ -21,9 +21,10 @@ app.use(express.static(config.publicDir, {
 app.use('/api', apiRouter);
 
 app.get('*', (req, res) => {
-  if (!req.path.startsWith('/api')) {
-    res.sendFile(join(config.publicDir, 'index.html'));
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ error: 'Not found' });
   }
+  res.sendFile(join(config.publicDir, 'index.html'));
 });
 
 app.use((err, req, res, _next) => {

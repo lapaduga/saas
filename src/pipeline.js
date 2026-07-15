@@ -93,9 +93,12 @@ export async function runPipeline({ message, threadId, userId, ticketId, history
   if (threadId) {
     try {
       const db = getDb();
-      statements.insertMessage(db).run(threadId, 'user', message, '{}');
-      statements.insertMessage(db).run(threadId, 'assistant', finalAnswer, JSON.stringify({ sources: formatSources(ragResults), toolCalls }));
-      statements.updateThreadTimestamp(db).run(threadId);
+      const saveMessages = db.transaction(() => {
+        statements.insertMessage(db).run(threadId, 'user', message, '{}');
+        statements.insertMessage(db).run(threadId, 'assistant', finalAnswer, JSON.stringify({ sources: formatSources(ragResults), toolCalls }));
+        statements.updateThreadTimestamp(db).run(threadId);
+      });
+      saveMessages();
     } catch (err) {
       console.error('[PIPELINE] Failed to save messages:', err.message);
     }
@@ -103,8 +106,12 @@ export async function runPipeline({ message, threadId, userId, ticketId, history
 
   const totalTiming = Date.now() - startTime;
 
-  const db = getDb();
-  statements.insertQuery(db).run(message, finalAnswer, JSON.stringify(formatSources(ragResults)), totalTiming);
+  try {
+    const db = getDb();
+    statements.insertQuery(db).run(message, finalAnswer, JSON.stringify(formatSources(ragResults)), totalTiming);
+  } catch (err) {
+    console.error('[PIPELINE] Failed to save query log:', err.message);
+  }
 
   return {
     answer: finalAnswer,

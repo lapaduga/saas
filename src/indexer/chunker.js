@@ -41,13 +41,3 @@ export function chunkFaq(entry) {
   const content = `Вопрос: ${entry.question}\nОтвет: ${entry.answer}\nКатегория: ${entry.category}\nТеги: ${entry.tags.join(', ')}`;
   return [{ heading: entry.question, content }];
 }
-
-export function chunkJson(content, filename) {
-  if (Array.isArray(content)) {
-    return content.map((item, i) => ({
-      heading: `${filename} #${i + 1}`,
-      content: JSON.stringify(item, null, 2),
-    }));
-  }
-  return [{ heading: filename, content: JSON.stringify(content, null, 2) }];
-}

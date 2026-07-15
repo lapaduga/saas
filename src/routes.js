@@ -110,9 +110,18 @@ router.get('/tickets/:id', (req, res) => {
 
 router.patch('/tickets/:id', (req, res) => {
   const { status, priority } = req.body;
+  const allowedStatus = ['open', 'in_progress', 'resolved', 'closed'];
+  const allowedPriority = ['low', 'medium', 'high', 'critical'];
   const updates = {};
-  if (status) updates.status = status;
-  if (priority) updates.priority = priority;
+  if (status) {
+    if (!allowedStatus.includes(status)) return res.status(400).json({ error: `Invalid status. Allowed: ${allowedStatus.join(', ')}` });
+    updates.status = status;
+  }
+  if (priority) {
+    if (!allowedPriority.includes(priority)) return res.status(400).json({ error: `Invalid priority. Allowed: ${allowedPriority.join(', ')}` });
+    updates.priority = priority;
+  }
+  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No valid fields to update' });
   const result = crmStore.updateTicket(req.params.id, updates);
   if (!result) return res.status(404).json({ error: 'Ticket not found' });
   res.json(result);

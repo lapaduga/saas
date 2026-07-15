@@ -74,8 +74,8 @@ function cosineSimilarity(a, b) {
 }
 
 export async function retrieve(query, topK, threshold) {
-  topK = topK || config.retriever.topK;
-  threshold = threshold || config.retriever.threshold;
+  topK = topK ?? config.retriever.topK;
+  threshold = threshold ?? config.retriever.threshold;
   const chunks = loadChunks();
   const idf = computeIdf(chunks);
 
@@ -113,9 +113,4 @@ export async function retrieve(query, topK, threshold) {
 
   console.log(`[RETRIEVER] Query: "${query.slice(0, 50)}..." → ${results.length} results (top score: ${results[0]?.score?.toFixed(3) || 'none'})`);
   return results;
-}
-
-export function invalidateCache() {
-  cachedChunks = null;
-  idfScores = null;
 }

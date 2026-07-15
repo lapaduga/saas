@@ -12,7 +12,6 @@ const config = {
   port: parseInt(process.env.PORT || '3001', 10),
   host: process.env.HOST || '0.0.0.0',
   dbPath: resolve(root, process.env.DB_PATH || './data/support.db'),
-  llmProvider: process.env.LLM_PROVIDER || 'deepseek',
   llm: {
     model: process.env.CHAT_MODEL || 'deepseek-v4-pro',
     baseUrl: process.env.CHAT_BASE_URL || 'https://api.deepseek.com',
