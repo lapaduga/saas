@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Support Assistant — CloudApp</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <span class="logo">&#128295; AI Support Assistant</span>
+    </div>
+    <div class="header-center">
+      <span class="product-badge">CloudApp</span>
+    </div>
+    <div class="header-right">
+      <button id="stats-btn" class="btn-small">System Stats</button>
+      <button id="new-chat-btn" class="btn-small btn-primary">+ New Chat</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>Tickets</h3>
+        <div class="filter-tabs" id="filter-tabs">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="open">Open</button>
+          <button class="tab" data-filter="in_progress">In Progress</button>
+          <button class="tab" data-filter="resolved">Resolved</button>
+          <button class="tab" data-filter="closed">Closed</button>
+        </div>
+      </div>
+      <div class="ticket-list" id="ticket-list"></div>
+    </aside>
+
+    <section class="chat-area" id="chat-area">
+      <div class="messages" id="messages">
+        <div class="message ai-message">
+          <div class="message-avatar">AI</div>
+          <div class="message-content">
+            <p>Здравствуйте! Я AI-ассистент поддержки CloudApp. Задайте вопрос или выберите тикет слева для начала работы.</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="input-wrapper">
+          <textarea id="chat-input" placeholder="Type your message..." rows="1"></textarea>
+          <button id="send-btn" class="btn-send" disabled>&#9654;</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="context-panel" id="context-panel">
+      <div class="panel-empty" id="panel-empty">
+        <p>Select a ticket to view context</p>
+      </div>
+      <div class="panel-content" id="panel-content" style="display:none;">
+        <div class="panel-section">
+          <h4>User Info</h4>
+          <div id="user-info"></div>
+        </div>
+        <div class="panel-section">
+          <h4>Ticket</h4>
+          <div id="ticket-info"></div>
+        </div>
+        <div class="panel-section">
+          <h4>Messages</h4>
+          <div id="ticket-messages"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="modal" id="stats-modal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>System Stats</h3>
+        <button class="modal-close" id="stats-close">&times;</button>
+      </div>
+      <div class="modal-body" id="stats-body"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

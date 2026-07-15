@@ -1,0 +1,122 @@
+[
+  {
+    "id": "usr_001",
+    "name": "Иван Петров",
+    "email": "ivan@example.com",
+    "plan": "pro",
+    "status": "active",
+    "registration_date": "2025-03-15",
+    "last_login": "2026-07-10",
+    "company": "Acme Corp",
+    "phone": "+7 (999) 123-45-67",
+    "notes": "VIP клиент, приоритетная поддержка"
+  },
+  {
+    "id": "usr_002",
+    "name": "Мария Сидорова",
+    "email": "maria@techstart.io",
+    "plan": "enterprise",
+    "status": "active",
+    "registration_date": "2024-11-20",
+    "last_login": "2026-07-15",
+    "company": "TechStart",
+    "phone": "+7 (916) 555-12-34",
+    "notes": "Контактное лицо по интеграции API"
+  },
+  {
+    "id": "usr_003",
+    "name": "Алексей Козлов",
+    "email": "alexey@designhub.ru",
+    "plan": "basic",
+    "status": "active",
+    "registration_date": "2026-01-10",
+    "last_login": "2026-07-08",
+    "company": "DesignHub",
+    "phone": "+7 (903) 222-88-99",
+    "notes": ""
+  },
+  {
+    "id": "usr_004",
+    "name": "Елена Волкова",
+    "email": "elena@megastore.com",
+    "plan": "pro",
+    "status": "suspended",
+    "registration_date": "2025-06-01",
+    "last_login": "2026-06-20",
+    "company": "MegaStore",
+    "phone": "+7 (925) 333-44-55",
+    "notes": "Аккаунт приостановлен за нарушение лимитов API"
+  },
+  {
+    "id": "usr_005",
+    "name": "Дмитрий Новиков",
+    "email": "dmitry@finpro.ru",
+    "plan": "enterprise",
+    "status": "active",
+    "registration_date": "2024-08-12",
+    "last_login": "2026-07-14",
+    "company": "FinPro Group",
+    "phone": "+7 (495) 111-22-33",
+    "notes": "Выделенный менеджер: Анна К."
+  },
+  {
+    "id": "usr_006",
+    "name": "Ольга Морозова",
+    "email": "olga@startup.dev",
+    "plan": "free",
+    "status": "active",
+    "registration_date": "2026-05-01",
+    "last_login": "2026-07-01",
+    "company": "StartupDev",
+    "phone": "",
+    "notes": "Новичок, нуждается в обучении"
+  },
+  {
+    "id": "usr_007",
+    "name": "Сергей Павлов",
+    "email": "sergey@oldcorp.com",
+    "plan": "basic",
+    "status": "banned",
+    "registration_date": "2025-02-28",
+    "last_login": "2025-12-15",
+    "company": "OldCorp",
+    "phone": "+7 (812) 777-66-55",
+    "notes": "Заблокирован за многократные нарушения"
+  },
+  {
+    "id": "usr_008",
+    "name": "Анна Лебедева",
+    "email": "anna@mediapro.tv",
+    "plan": "pro",
+    "status": "active",
+    "registration_date": "2025-09-10",
+    "last_login": "2026-07-16",
+    "company": "MediaPro",
+    "phone": "+7 (903) 888-99-00",
+    "notes": "Активный пользователь API"
+  },
+  {
+    "id": "usr_009",
+    "name": "Павел Соколов",
+    "email": "pavel@logistic.net",
+    "plan": "enterprise",
+    "status": "active",
+    "registration_date": "2024-12-05",
+    "last_login": "2026-07-12",
+    "company": "LogisticNet",
+    "phone": "+7 (916) 444-55-66",
+    "notes": "Интеграция с ERP-системой"
+  },
+  {
+    "id": "usr_010",
+    "name": "Наталья Кузнецова",
+    "email": "natalya@edutech.school",
+    "plan": "free",
+    "status": "active",
+    "registration_date": "2026-06-15",
+    "last_login": "2026-07-05",
+    "company": "EduTech",
+    "phone": "",
+    "notes": "Пилотный проект для школы"
+  }
+]

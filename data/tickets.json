@@ -1,0 +1,247 @@
+[
+  {
+    "id": "tkt_001",
+    "user_id": "usr_001",
+    "subject": "Не работает авторизация через SSO",
+    "description": "При попытке войти через корпоративный SSO получаю ошибку 403. Пробовал вчера и сегодня. Браузер Chrome 126.",
+    "status": "open",
+    "priority": "high",
+    "category": "auth",
+    "created_at": "2026-07-12T10:30:00Z",
+    "updated_at": "2026-07-12T14:15:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Здравствуйте, Иван! Мы проверяем проблему с SSO. Подскажите, какой Identity Provider вы используете?",
+        "timestamp": "2026-07-12T11:00:00Z"
+      },
+      {
+        "role": "user",
+        "content": "Мы используем Okta.",
+        "timestamp": "2026-07-12T11:30:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_002",
+    "user_id": "usr_002",
+    "subject": "Вопрос по биллингу: двойное списание",
+    "description": "За июль было списано дважды за подписку Pro. Ожидалось списание только 12 июля, но было ещё 15 июля.",
+    "status": "open",
+    "priority": "critical",
+    "category": "billing",
+    "created_at": "2026-07-15T09:00:00Z",
+    "updated_at": "2026-07-15T09:00:00Z",
+    "messages": []
+  },
+  {
+    "id": "tkt_003",
+    "user_id": "usr_003",
+    "subject": "API rate limit слишком низкий",
+    "description": "На тарифе Basic лимит 100 запросов в минуту, но мне нужно больше. Есть ли возможность увеличить?",
+    "status": "in_progress",
+    "priority": "medium",
+    "category": "api",
+    "created_at": "2026-07-10T14:20:00Z",
+    "updated_at": "2026-07-11T10:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Здравствуйте, Алексей! Лимиты на тарифе Basic фиксированы. Рекомендуем рассмотреть тариф Pro для увеличения лимитов. Хотите, я отправлю сравнение тарифов?",
+        "timestamp": "2026-07-10T15:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_004",
+    "user_id": "usr_004",
+    "subject": "Почему аккаунт приостановлен?",
+    "description": "Получил уведомление о приостановке аккаунта. Не понимаю причину — использовал API в рамках тарифа.",
+    "status": "open",
+    "priority": "high",
+    "category": "auth",
+    "created_at": "2026-07-14T08:00:00Z",
+    "updated_at": "2026-07-14T08:00:00Z",
+    "messages": []
+  },
+  {
+    "id": "tkt_005",
+    "user_id": "usr_005",
+    "subject": "Ошибка 500 при загрузке файлов >100MB",
+    "description": "При загрузке файлов больше 100 МБ получаю ошибку 500. Мелкие файлы загружаются нормально. Это критично для我们的 workflow.",
+    "status": "in_progress",
+    "priority": "high",
+    "category": "bug",
+    "created_at": "2026-07-13T16:45:00Z",
+    "updated_at": "2026-07-14T09:30:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Дмитрий, спасибо за детали! Мы воспроизвели проблему. Это связано с таймаутом соединения. Пока что попробуйте разбивать файлы на части <100MB. Исправление запланировано на следующий релиз.",
+        "timestamp": "2026-07-14T09:30:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_006",
+    "user_id": "usr_006",
+    "subject": "Как начать использовать CloudApp?",
+    "description": "Только зарегистрировалась. Не понимаю, с чего начать. Есть ли гайд по быстрому старту?",
+    "status": "resolved",
+    "priority": "low",
+    "category": "general",
+    "created_at": "2026-07-02T12:00:00Z",
+    "updated_at": "2026-07-03T10:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Ольга, добро пожаловать! Вот ссылка на руководство по быстрому старту: docs/cloudapp.com/quickstart. Также рекомендем посмотреть видео-туториал на нашем YouTube-канале.",
+        "timestamp": "2026-07-02T13:00:00Z"
+      },
+      {
+        "role": "user",
+        "content": "Спасибо! Разобралась, очень удобно!",
+        "timestamp": "2026-07-03T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_007",
+    "user_id": "usr_008",
+    "subject": "Как настроить вебхуки для API?",
+    "description": "Хочу настроить уведомления через вебхуки при загрузке новых файлов. В документации не нашла детальное описание.",
+    "status": "open",
+    "priority": "medium",
+    "category": "api",
+    "created_at": "2026-07-15T11:30:00Z",
+    "updated_at": "2026-07-15T11:30:00Z",
+    "messages": []
+  },
+  {
+    "id": "tkt_008",
+    "user_id": "usr_009",
+    "subject": "Проблема с интеграцией ERP",
+    "description": "При синхронизации данных с 1С:ERP получаем дублирующиеся записи. Параметры webhook переданы верно, проверяли.",
+    "status": "in_progress",
+    "priority": "high",
+    "category": "bug",
+    "created_at": "2026-07-11T09:00:00Z",
+    "updated_at": "2026-07-13T14:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Павел, это известная проблема с дедупликацией. Мы работаем над исправлением. Временное решение — добавить заголовок X-Idempotency-Key в запросы.",
+        "timestamp": "2026-07-11T10:30:00Z"
+      },
+      {
+        "role": "user",
+        "content": "Спасибо, попробуем с idempotency key.",
+        "timestamp": "2026-07-11T11:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_009",
+    "user_id": "usr_010",
+    "subject": "Бесплатный тариф — лимиты?",
+    "description": "На бесплатном тарифе какой лимит на хранение? Не нашла информацию на сайте.",
+    "status": "closed",
+    "priority": "low",
+    "category": "billing",
+    "created_at": "2026-07-01T15:00:00Z",
+    "updated_at": "2026-07-02T09:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Наталья, на бесплатном тарифе доступно 5 ГБ хранилища и 1000 API-запросов в месяц. Подробности в разделе Тарифы.",
+        "timestamp": "2026-07-01T15:30:00Z"
+      },
+      {
+        "role": "user",
+        "content": "Поняла, спасибо!",
+        "timestamp": "2026-07-02T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_010",
+    "user_id": "usr_001",
+    "subject": "Запрос на увеличение хранилища",
+    "description": "Нам нужно увеличить хранилище с 100GB до 500GB. Как это сделать и сколько стоит?",
+    "status": "closed",
+    "priority": "medium",
+    "category": "billing",
+    "created_at": "2026-07-05T10:00:00Z",
+    "updated_at": "2026-07-06T14:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Иван, дополнительное хранилище стоит $5/мес за каждые 100GB. Вы можете добавить его в настройках аккаунта или я могу помочь через поддержку.",
+        "timestamp": "2026-07-05T11:00:00Z"
+      },
+      {
+        "role": "user",
+        "content": "Оформите, пожалуйста, через поддержку. Нужно 400GB доп. хранилища.",
+        "timestamp": "2026-07-05T14:00:00Z"
+      },
+      {
+        "role": "operator",
+        "content": "Готово! Добавлено 400GB хранилища, стоимость $20/мес. Начнет действовать со следующего биллингового цикла.",
+        "timestamp": "2026-07-06T14:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_011",
+    "user_id": "usr_002",
+    "subject": "Настройка SSO для команды",
+    "description": "Нужно настроить SSO через Okta для 50 сотрудников. Какие шаги необходимы?",
+    "status": "resolved",
+    "priority": "medium",
+    "category": "auth",
+    "created_at": "2026-07-08T13:00:00Z",
+    "updated_at": "2026-07-10T16:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Мария, для настройки SSO через Okta вам нужно:\n1. Создать приложение в Okta (SAML 2.0)\n2. Указать ACS URL из настроек CloudApp\n3. Загрузить метаданные в CloudApp\n4. Пригласить сотрудников через Okta\n\nДетальная инструкция: docs/cloudapp.com/sso-setup",
+        "timestamp": "2026-07-08T14:00:00Z"
+      },
+      {
+        "role": "user",
+        "content": "Спасибо! Всё получилось!",
+        "timestamp": "2026-07-10T16:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_012",
+    "user_id": "usr_005",
+    "subject": "Вопрос по безопасности данных",
+    "description": "Какие стандарты безопасности соблюдает CloudApp? Нужно для прохождения аудита.",
+    "status": "resolved",
+    "priority": "medium",
+    "category": "general",
+    "created_at": "2026-07-09T11:00:00Z",
+    "updated_at": "2026-07-11T09:00:00Z",
+    "messages": [
+      {
+        "role": "operator",
+        "content": "Дмитрий, CloudApp соответствует:\n- SOC 2 Type II\n- GDPR\n- ISO 27001\n- Шифрование данных AES-256 at rest, TLS 1.3 in transit\n\nПолная информация: docs/cloudapp.com/security",
+        "timestamp": "2026-07-09T12:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt_013",
+    "user_id": "usr_006",
+    "subject": "Как добавить команду?",
+    "description": "Хочу пригласить коллег в рабочее пространство. Где найти функцию приглашения?",
+    "status": "open",
+    "priority": "low",
+    "category": "general",
+    "created_at": "2026-07-16T08:00:00Z",
+    "updated_at": "2026-07-16T08:00:00Z",
+    "messages": []
+  }
+]
