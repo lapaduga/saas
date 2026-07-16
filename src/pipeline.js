@@ -7,13 +7,27 @@ import { getDb, statements } from './storage/db.js';
 import config from './config.js';
 
 function parseToolCall(text) {
-  const match = text.match(/TOOL_CALL:\s*(\{.*?\})/);
-  if (!match) return null;
-  try {
-    return JSON.parse(match[1]);
-  } catch {
-    return null;
+  const idx = text.indexOf('TOOL_CALL:');
+  if (idx === -1) return null;
+  const after = text.slice(idx + 'TOOL_CALL:'.length);
+  let depth = 0;
+  let start = -1;
+  for (let i = 0; i < after.length; i++) {
+    if (after[i] === '{') {
+      if (start === -1) start = i;
+      depth++;
+    } else if (after[i] === '}') {
+      depth--;
+      if (depth === 0 && start !== -1) {
+        try {
+          return JSON.parse(after.slice(start, i + 1));
+        } catch {
+          return null;
+        }
+      }
+    }
   }
+  return null;
 }
 
 function formatSources(results) {
@@ -62,11 +76,14 @@ export async function runPipeline({ message, threadId, userId, ticketId, history
 
   let finalAnswer = '';
   let toolCalls = [];
+  let lastLlmContent = '';
 
   for (let step = 0; step < config.pipeline.maxToolSteps; step++) {
     stages.push({ name: `llm_step_${step}`, start: Date.now() });
     const llmResponse = await chat(messages);
     stages[stages.length - 1].duration_ms = Date.now() - stages[stages.length - 1].start;
+
+    lastLlmContent = llmResponse.content;
 
     const toolCall = parseToolCall(llmResponse.content);
     if (!toolCall) {
@@ -87,7 +104,7 @@ export async function runPipeline({ message, threadId, userId, ticketId, history
   }
 
   if (!finalAnswer) {
-    finalAnswer = 'Не удалось сформировать ответ. Пожалуйста, попробуйте переформулировать вопрос.';
+    finalAnswer = lastLlmContent || 'Не удалось сформировать ответ. Пожалуйста, попробуйте переформулировать вопрос.';
   }
 
   if (threadId) {

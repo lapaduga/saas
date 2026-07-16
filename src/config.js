@@ -9,7 +9,7 @@ const root = resolve(__dirname, '..');
 dotenvConfig({ path: resolve(root, '.env') });
 
 const config = {
-  port: parseInt(process.env.PORT || '3001', 10),
+  port: parseInt(process.env.PORT || '3000', 10),
   host: process.env.HOST || '0.0.0.0',
   dbPath: resolve(root, process.env.DB_PATH || './data/support.db'),
   llm: {
